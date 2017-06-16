@@ -10,16 +10,29 @@ import javax.persistence.Id;
 public class Lunch {
 	
 	private double price;
-	private String mainCourse;
-	private ArrayList<String> sides = new ArrayList<String>();
-	private String drink;
+	private ArrayList<String> mainCourse = new ArrayList<String>(); 
+	private ArrayList<String> sides = new ArrayList<String>();//TODO: change to Side object
+	private String drink;// change to drink object
 	private double rating;
 	private String lunchName;
+	private String comment; 
 	
 	@Id
 	@GeneratedValue
 	private long lunchId;
 	
+	public String getComment() {
+		return comment;
+	}
+
+	public void setComment(String comment) {
+		this.comment = comment;
+	}
+
+	public void setMainCourse(ArrayList<String> mainCourse) {
+		this.mainCourse = mainCourse;
+	}
+
 	public long getLunchId() {
 		return lunchId;
 	}
@@ -44,12 +57,8 @@ public class Lunch {
 		this.price = price;
 	}
 
-	public String getMainCourse() {
+	public ArrayList<String> getMainCourse() {
 		return mainCourse;
-	}
-
-	public void setMainCourse(String mainCourse) {
-		this.mainCourse = mainCourse;
 	}
 
 	public ArrayList<String> getSides() {
